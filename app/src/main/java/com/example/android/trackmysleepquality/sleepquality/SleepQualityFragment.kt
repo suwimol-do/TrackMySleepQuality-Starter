@@ -56,7 +56,7 @@ class SleepQualityFragment : Fragment() {
         val sleepQualityViewModel =  ViewModelProviders.of(this,viewModelFactory).get(SleepQualityViewModel::class.java)
 
         binding.sleepQualityViewModel =sleepQualityViewModel
-        binding.sleepQualityViewModel.navigateToSleepTracker.observe(viewLifecycleOwner, Observer {
+        sleepQualityViewModel.navigateToSleepTracker.observe(viewLifecycleOwner, Observer {
             if (it == true) { // Observed state is true.
                 this.findNavController().navigate(
                         SleepQualityFragmentDirections.actionSleepQualityFragmentToSleepTrackerFragment())
